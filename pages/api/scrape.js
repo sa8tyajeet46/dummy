@@ -1,6 +1,6 @@
 // import { scrapeSmartChart } from "./../../lib/scrapeSmartChart";
 const playwright = require('playwright');
-const chromium = require('@sparticuz/chromium-min');
+
 export default async function handler(req, res) {
 
   try {
@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const data={};
     const browser = await playwright.chromium.launch({
       headless: true ,
-      executablePath:await chromium.executablePath()
+      
       // setting this to true will not run the UI
   });
   const page = await browser.newPage();
